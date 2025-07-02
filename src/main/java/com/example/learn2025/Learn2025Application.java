@@ -13,18 +13,4 @@ public class Learn2025Application {
 	public static void main(String[] args) {
 		SpringApplication.run(Learn2025Application.class, args);
 	}
-
-	@Bean
-	public CommandLineRunner commandLineRunner(MemberRepository repository) {
-		return args -> {
-			var member = Member.builder()
-					.firstName("Yu-Hsien")
-					.lastName("Hsien")
-					.account("test")
-					.password("passwd")
-					.name("monkey")
-					.build();
-			repository.save(member);
-		};
-	}
 }
